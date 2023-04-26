@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 app = Flask(__name__)
 app.secret_key = 'CareewiseProjectApplication'
 
-
+db=CareerManagerDB()
 
 @app.route('/')
 def index():

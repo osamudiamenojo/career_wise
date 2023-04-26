@@ -57,7 +57,7 @@ class CareerManagerDB:
         return careers
     
     def update_career(self, career_id, new_title, new_description, new_status):
-        career = self.session.get(career, career_id)
+        career = self.session.get(Career, career_id)
         if career is None:
             return {"error": "career not found"}
         career.title = new_title

@@ -15,9 +15,8 @@ app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(os.getcwd(), 'static', 'images
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app,photos)
 
-db = SQLAlchemy(app)
-db.init_app(app)
-queries = Queries(db)
+
+queries = Queries()
 
 login_manager = LoginManager()
 login_manager.init_app(app)

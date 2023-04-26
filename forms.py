@@ -3,8 +3,8 @@ from wtforms import PasswordField, SubmitField, EmailField, StringField, TextAre
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_wtf.file import FileAllowed, FileRequired
 from flask_uploads import UploadSet,IMAGES, configure_uploads
-from models import User,db
-from repository import CareerManagerDB as Queries
+# from models import User,db
+# from repository import CareerManagerDB as Queries
 from flask import Flask
 
 app = Flask(__name__)
@@ -30,11 +30,11 @@ class SignupForm(FlaskForm):
 
   submit = SubmitField("Signup")
 
-  def validate_email(self,email):
-    existing_email=User.query.filter_by(email=email.data).first()
+  # def validate_email(self,email):
+  #   existing_email=User.query.filter_by(email=email.data).first()
 
-    if existing_email:
-      raise ValidationError("That email already exists. Please use a different one.")
+  #   if existing_email:
+  #     raise ValidationError("That email already exists. Please use a different one.")
 
 class ImageForm(FlaskForm):
   

@@ -5,7 +5,7 @@ from models import *
 
 class CareerManagerDB:
     # set logging=True to log all SQL queries
-    def __init__(self, path="sqlite:///activities.db", logging=False):
+    def __init__(self, path="sqlite:///application.db", logging=False):
         self.engine = create_engine(path, echo=logging)
         Session = sessionmaker(bind=self.engine)
         Base.metadata.create_all(bind=self.engine)

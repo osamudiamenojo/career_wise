@@ -4,7 +4,7 @@ from wtforms.validators import InputRequired, Length, ValidationError
 from flask_wtf.file import FileAllowed, FileRequired
 from flask_uploads import UploadSet,IMAGES, configure_uploads
 from models import User,db
-from queries import Queries
+from repository import CareerManagerDB as Queries
 from flask import Flask
 
 app = Flask(__name__)
@@ -13,7 +13,6 @@ photos = UploadSet('photos', IMAGES)
 configure_uploads(app,photos)
 
 
-query = Queries(db)
 class LoginForm(FlaskForm):  
 
   email = EmailField(validators = [InputRequired()])

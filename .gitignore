@@ -40,3 +40,8 @@ include
 
 # Cython debug symbols
 cython_debug/
+
+#personal files for @mersaii
+node_modules
+*.json
+my_txt.txt

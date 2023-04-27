@@ -34,8 +34,8 @@ def before_request():
 def index():
   return render_template("index.html")
 
-@app.route('/sign_up', methods=['GET', 'POST'])
-def sign_up():
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
   form = SignupForm()
   error = None
 

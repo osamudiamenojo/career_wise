@@ -24,7 +24,7 @@ login_manager.login_view = "login"
 
 @login_manager.user_loader
 def load_user(user_id):
-  return db.session.get(User, int(user_id))
+  return queries.session.get(User, int(user_id))
 
 @app.before_request
 def before_request():
@@ -34,6 +34,11 @@ def before_request():
 def index():
   return render_template("index.html")
 
+def log_report(report):
+  with open("report.txt", 'a', encoding='utf-8') as f:
+        f.write(f'{report}\n')
+
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
   form = SignupForm()
@@ -41,30 +46,40 @@ def signup():
 
   if form.validate_on_submit():
     password_hash = generate_password_hash(form.password.data)
+    log_report("validated")
     queries.add_user(form.name.data, form.email.data,
                             password_hash)
-    user = User.query.filter_by(email=form.email.data).first()
+    log_report("not sure add_user worked")
+    user = queries.find_user_by_email(form.email.data)
+    # user = User.query.filter_by(email=form.email.data).first()
     if user:
       login_user(user)
     else:
       error = "unsuccesful"
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('dashboard')) 
+  if form.errors:
+    log_report(form.errors)
   return render_template("signup.html", form=form, error=error)
 
-def validate_user(email, password):
-    user = User.query.filter_by(email=email).first()
-    if user and check_password_hash(User.password, password):
-        login_user(user)
-        return True
-    else:
-        return False
+# def validate_user(email, password):
+#     user = Queries.find_user_by_email(email=email)
+#     if user and check_password_hash(user.password, password):
+#         login_user(user)
+#         return True
+#     else:
+#         return False
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     form = LoginForm()
     if form.validate_on_submit():
-        if validate_user(form.email.data, form.password.data):
+        user = queries.find_user_by_email(email=form.email.data)
+        if user and check_password_hash(user.password, form.password.data):
+            login_user(user)
+        #     return True
+        # else:
+        #     return False
             return redirect(url_for('dashboard'))
         else:
             error = "invalid password / user"

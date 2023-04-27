@@ -1,0 +1,10 @@
+{'password': ['Passwords must match', 'Password must contain at least one uppercase letter, one lowercase letter, and one number']}
+{'password': ['Passwords must match', 'Password must contain at least one uppercase letter, one lowercase letter, and one number']}
+{'password': ['Passwords must match', 'Password must contain at least one uppercase letter, one lowercase letter, and one number']}
+{'password': ['Passwords must match', 'Password must contain at least one uppercase letter, one lowercase letter, and one number']}
+{'password': ['Passwords must match']}
+{'password': ['Passwords must match']}
+{'password': ['Passwords must match']}
+{'password': ['Passwords must match']}
+validated
+not sure add_user worked

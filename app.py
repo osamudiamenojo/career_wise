@@ -61,6 +61,11 @@ def signup():
     log_report(form.errors)
   return render_template("signup.html", form=form, error=error)
 
+@app.route("/add-careers", methods=['GET', 'POST'])
+def add_careers():
+  pass
+  
+
 # def validate_user(email, password):
 #     user = Queries.find_user_by_email(email=email)
 #     if user and check_password_hash(user.password, password):

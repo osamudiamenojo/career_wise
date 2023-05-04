@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Career Decision App</title>
+    <link rel="stylesheet" href="static/stylesheet/career.css" />
+  </head>
+  <body>
+    <h1>Career Decision App</h1>
+    <form action="/submit-career" method="post">
+      <div class="form-field">
+        <label for="career">Career:</label>
+        <input type="text" id="career" name="career" required />
+      </div>
+      <div class="form-field">
+        <label for="bsc-course">BSc Course:</label>
+        <input type="text" id="bsc-course" name="bsc-course" required />
+      </div>
+      <div class="form-field">
+        <label for="subjects">Secondary School Subjects:</label>
+        <textarea id="subjects" name="subjects" rows="5" cols="30" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

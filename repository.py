@@ -29,9 +29,29 @@ class CareerManagerDB:
             return "It seems this email has been used before"
             
 
-    def add_career(self, title, description, user_id):
-        self.session.add(Career(title=title, description= description, user_id= user_id ))
+    def add_career(self, title, description, picture_url, category):
+        self.session.add(Career(title=title, description= description, picture_url=picture_url, category=category))
         self.session.commit()
+    
+    def add_course(self, course_name, career_id):
+        self.session.add(Courses(course_name=course_name, career_id=career_id))
+        self.session.commit()
+        
+    def add_subject(self, name, course_id):
+        self.session.add(Subjects(name=name, course_id=course_id))
+        self.session.commit()
+        
+    def add_career_with_courses(self, title, description, picture_url, category, courses):
+        career = Career(title=title, description=description, picture_url=picture_url, category=category)
+        for course_data in courses:
+            course = Courses(course_name=course_data["course_name"])
+            for subject_name in course_data["subjects"]:
+                subject = Subjects(name=subject_name)
+                course.subjects.append(subject)
+            career.courses.append(course)
+        self.session.add(career)
+        self.session.commit()
+
     
     
     def get_user(self, user_id_to_lookup):
@@ -43,7 +63,12 @@ class CareerManagerDB:
     def get_career(self, career_id_to_lookup):
         result = self.session.get(Career, career_id_to_lookup)
         if result == None:
-            raise Exception(f"User not Found")
+            raise Exception(f"Career not Found")
+        return result
+    def get_course(self, course_id_to_lookup):
+        result = self.session.get(Career, course_id_to_lookup)
+        if result == None:
+            raise Exception(f"Career not Found")
         return result
 
     def find_user_by_email(self, email):

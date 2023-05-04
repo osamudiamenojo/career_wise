@@ -48,3 +48,9 @@ class SignupForm(FlaskForm):
 class ImageForm(FlaskForm):
   
   image = FileField('Image',validators =[FileAllowed(photos,'Images only!'),FileRequired('File field should not be empty')])
+
+class SearchForm(FlaskForm):
+
+    keyword = StringField("Keyword", validators=[InputRequired()])
+
+    submit = SubmitField("Search")

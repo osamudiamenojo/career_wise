@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+    {% if occupations %}
+      <ul>
+        {% for occupation in occupations %}
+          <li><a href="{{ url_for('occupation_details', code=occupation[1]) }}">{{ occupation[0]}}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No results found.</p>
+    {% endif %}
+    <a href="{{ url_for('search') }}">Search again</a>
+  </body>
+</html>

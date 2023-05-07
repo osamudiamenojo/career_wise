@@ -26,6 +26,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+my_env
 .env
 .venv
 env/
@@ -45,3 +46,6 @@ cython_debug/
 node_modules
 *.json
 my_txt.txt
+
+#for @samadeolu7
+private.py

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>careers</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="{{url_for('index')}}"><img src="../static/images/cwlogo(541).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+
+                <ul>
+                    <li><a href="{{url_for('index')}}">HOME</a></li>
+                    <li><a href="{{url_for('careers')}}">CAREERS</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">TEAM</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <h1>THE PROFESSION</h1>
+
+    </section>
+    <!-- SEARCH BAR -->
+    <div class="container">
+        <form action="" class="search-bar">
+            <input type="text" placeholder="Search any career" name="yut">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass " style="color: #0e8388;"></i></button>
+        </form>
+    </div>
+
+    <!-- CAREERS -->
+    <section class="each-career">
+
+        <div class="row1">
+            <div class="acol">
+                <img src='/static/images/engineer.jpg'>
+            </div>
+
+            <div class="acol">
+                <h1>THE PROFESSION</h1>
+                <p>Also called: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <h3>WHAT WE DO </h3>
+                <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."</p>
+            </div>
+        </div>
+
+        <div class="row3">
+            <h3>Resources</h3>
+            <ol>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consequuntur atque ea odit, ab temporibus? </li>
+                <li>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "</li>
+            </ol>
+        </div>
+
+    </section>
+
+
+
+    <!-- footer -->
+    <section class="footer">
+        <h4>About us</h4>
+        <p>we are amazing lorem ipsum .....................</p>
+
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <p><i class="icons fa-regular fa-copyright"></i>copyright CareerWise </p>
+    </section>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

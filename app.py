@@ -93,3 +93,11 @@ def dashboard():
     return redirect(url_for('login'))
 
   return render_template("dashboard.html")
+
+@app.route('/careers', methods = ['GET'])
+def careers():
+    return render_template('careers.html')
+
+@app.route('/eachcareer', methods =['GET'])
+def eachcareer():
+    return render_template('eachcareer.html')

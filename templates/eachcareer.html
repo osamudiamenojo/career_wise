@@ -29,7 +29,7 @@
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
 
-        <h1>THE PROFESSION</h1>
+        <h1>{{ occupation.title }}</h1>
 
     </section>
     <!-- SEARCH BAR -->
@@ -49,25 +49,62 @@
             </div>
 
             <div class="acol">
-                <h1>THE PROFESSION</h1>
-                <p>Also called: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <h1>{{ occupation.title }}</h1>
+                <p>Also called: {{occupation.title}} {%for title in occupation.also_called.title%}, {{title}}{%endfor%}.</p>
                 <h3>WHAT WE DO </h3>
-                <p>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui."</p>
+                <p>{{ occupation.what_they_do}} </p>
+                <ul>
+                {%for items in occupation.on_the_job.task%}
+
+                    <li>{{items}}</li>
+                {%endfor%}
+
+                </ul>
             </div>
         </div>
-
+        
         <div class="row3">
-            <h3>Resources</h3>
-            <ol>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consequuntur atque ea odit, ab temporibus? </li>
-                <li>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "</li>
-            </ol>
+            <h3>EDUCATION</h3>
+            <ul>
+            {%for items in education %}
+            
+                <li>{{items}} </li>
+              
+            {%endfor%}
+            </ul>
+           
+        </div>
+        <div class="row3">
+            <h3>KNOWLEDGE</h3>
+            <ul>
+            {%for items in knowledge%}
+            
+                <li>{{items.title.name}} </li>
+                <ul>
+                {%for item in items.element%}
+                    <li> {{item.name}} <li>
+                {%endfor%}
+                </ul>
+            {%endfor%}   
+            </ul>           
+           
+        </div>
+        <div class="row3">
+            <h3>SKILLS</h3>
+            <ul>
+            {%for items in skills%}
+            
+                <li>{{items.title.name}} </li>
+                <ul>
+                {%for item in items.element%}
+                    <li> {{item.name}} <li>
+                        {%endfor%}
+                </ul>
+            {%endfor%}  
+            </ul>                        
         </div>
 
     </section>
-
-
 
     <!-- footer -->
     <section class="footer">

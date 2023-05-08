@@ -88,19 +88,44 @@ def index():
 
 @app.route('/search_results', methods=['POST'])
 def search_results():
-    keyword = request.form['keyword']
-    occupation_codes = api.search_occupations(keyword)
-    occupations = []
+    keyword = request.form['yut'] #to be changed
+    occupation_codes = api.search_occupations(keyword)#use better namess
+    # occupations = []
     # for title in occupation_codes:
     #     # occupation = api.get_occupation(code)
     #     occupations.append(title)
     
     return render_template('search_result.html', occupations=occupation_codes)
 
+def extract_resource(occupation):
+  lst =[]
+  for items in occupation['resources']['resource']:
+    lst.append(items['title'])
+  return lst
+
 @app.route('/occupation/<code>')
 def occupation_details(code):
     occupation = api.get_occupation(code)
-    return render_template('occupation_details.html', occupation=occupation)
+    # resources = occupation['resources']['resource']
+    extra = extract_resource(occupation)
+    log_report(extra)
+    if 'Education' in extra:
+      education_info = api.get_extra_info(code,'education')
+      education = education_info['education_usually_needed']['category']
+
+    if 'Knowledge' in extra:
+      knowledge_info = api.get_extra_info(code,'knowledge')
+      knowledge = knowledge_info['group']
+    if 'Skills' in extra:
+      skill_info = api.get_extra_info(code,'skills')
+      skills = skill_info['group']
+    # if 'personality' in extra:
+    #   log_report(api.get_extra_info('personality'))
+    
+    return render_template('eachcareer.html', occupation=occupation,education=education,knowledge=knowledge,skills=skills)
+
+
+
 
 @app.route("/search", methods=["GET", "POST"])
 def search():

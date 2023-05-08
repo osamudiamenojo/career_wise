@@ -27,9 +27,12 @@ class OnetApi:
         else:
             self._url_root = 'https://services.onetcenter.org/v' + version + '/ws/'
     
-    def _make_request(self, endpoint, params=None,code =None):
+    def _make_request(self, endpoint, params=None,code =None,extra=None):
         if code:
-            url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/') +'/' + code
+            if extra:
+                url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/') +'/' + code +'/' + extra
+            else:
+                url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/') +'/' + code
         else :
             url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/')
         # url = f"{self._url_root}/{endpoint}"
@@ -37,6 +40,12 @@ class OnetApi:
         # response = requests.get(url, headers=self._headers)
         response.raise_for_status()
         return response.json()
+
+    def get_extra_info(self,code,extra):
+        endpoint = '/careers'
+        response_data = self._make_request(endpoint, code=code,extra=extra)
+        occupation_data = response_data
+        return occupation_data
 
     def get_occupation(self, code):
         endpoint = '/careers'
@@ -80,4 +89,3 @@ class Occupation:
 
 api = OnetApi(username=f"{username}", password=f"{password}")
 
-log_report(api.get_occupation(code='17-1011.00'))

@@ -34,7 +34,7 @@
     </section>
     <!-- SEARCH BAR -->
     <div class="container">
-        <form action="" class="search-bar">
+        <form action="{{url_for('search_results')}}" class="search-bar" method='post'>
             <input type="text" placeholder="Search any career" name="yut">
             <button type="submit"><i class="fa-solid fa-magnifying-glass " style="color: #0e8388;"></i></button>
         </form>

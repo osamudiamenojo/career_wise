@@ -42,68 +42,65 @@
 
     <!-- CAREERS -->
     <section class="each-career">
+        <div class='full'>
+            <div class="row1">
+                <div class="acol">
+                    <img src='/static/images/engineer.jpg'>
+                </div>
 
-        <div class="row1">
-            <div class="acol">
-                <img src='/static/images/engineer.jpg'>
-            </div>
+        <div class='each-career-info'>
+                    <div class="acol">
+                        <h1>{{ occupation.title }}</h1>
+                        <p>Also called: {{occupation.title}} {%for title in occupation.also_called.title%}, {{title}}{%endfor%}.</p>
+                        <h3>WHAT WE DO </h3>
+                        <p>{{ occupation.what_they_do}} </p>
+                        <ul>
+                        {%for items in occupation.on_the_job.task%}
 
-            <div class="acol">
-                <h1>{{ occupation.title }}</h1>
-                <p>Also called: {{occupation.title}} {%for title in occupation.also_called.title%}, {{title}}{%endfor%}.</p>
-                <h3>WHAT WE DO </h3>
-                <p>{{ occupation.what_they_do}} </p>
-                <ul>
-                {%for items in occupation.on_the_job.task%}
-
-                    <li>{{items}}</li>
-                {%endfor%}
-
-                </ul>
-            </div>
-        </div>
-        
-        <div class="row3">
-            <h3>EDUCATION</h3>
-            <ul>
-            {%for items in education %}
-            
-                <li>{{items}} </li>
-              
-            {%endfor%}
-            </ul>
-           
-        </div>
-        <div class="row3">
-            <h3>KNOWLEDGE</h3>
-            <ul>
-            {%for items in knowledge%}
-            
-                <li>{{items.title.name}} </li>
-                <ul>
-                {%for item in items.element%}
-                    <li> {{item.name}} <li>
-                {%endfor%}
-                </ul>
-            {%endfor%}   
-            </ul>           
-           
-        </div>
-        <div class="row3">
-            <h3>SKILLS</h3>
-            <ul>
-            {%for items in skills%}
-            
-                <li>{{items.title.name}} </li>
-                <ul>
-                {%for item in items.element%}
-                    <li> {{item.name}} <li>
+                            <li>{{items}}</li>
                         {%endfor%}
-                </ul>
-            {%endfor%}  
-            </ul>                        
-        </div>
 
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row3">
+                    <h3>EDUCATION</h3>
+                    <ul>
+                    {%for items in education %}
+                    
+                        <li>{{items}} </li>
+                    
+                    {%endfor%}
+                    </ul>
+                
+                    <h3>KNOWLEDGE</h3>
+                    <ul>
+                    {%for items in knowledge%}
+                    
+                        <li>{{items.title.name}} </li>
+            
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                        {%endfor%}
+                        
+                    {%endfor%}   
+                    </ul>           
+                
+                    <h3>SKILLS</h3>
+                    <ul>
+                    {%for items in skills%}
+                    
+                        <li>{{items.title.name}} </li>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+                    </ul>                        
+                </div>
+            </div>
     </section>
 
     <!-- footer -->

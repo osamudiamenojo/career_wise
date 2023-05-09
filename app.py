@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g, redirect, url_for,request
+from flask import Flask, render_template, g, redirect, url_for, request
 from flask_login import login_user, LoginManager, login_required, current_user
 from forms import LoginForm, SignupForm
 from flask_uploads import UploadSet,IMAGES, configure_uploads

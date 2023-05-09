@@ -283,36 +283,78 @@ nav .fa {
    margin: auto;
    /* background: #0e8388;
    color: #fff; */
-   padding-top: 80px;
+   padding-top: 20px;
    padding-bottom: 50px;
-
 }
-
-/* .row1{
-   justify-content: space-evenly;
-   display: flex;
-} */
 
 .acol {
    flex-basis: 48%; /*because only 2 cols are required */
    padding: 30px 2px;
 
-   /* border-radius: 10px;
-   margin-bottom: 5%; */
-   
-   /* box-sizing: border-box;  */
 }
 
 .acol img {
    width: 100%;
-   /* background-size: cover;
-   position: relative; */
+
 }
 
 .acol p {
    padding: 15px 0 25px;
 }
 
+.each-career-info {
+   border-style: groove;
+   border-radius: 5px;
+   border-width: 5px;
+   list-style: inside;
+   margin: 15px 0px;
+}
+.row3 {
+   border-style: groove;
+   border-radius: 5px;
+   border-width: 5px;
+   list-style: inside;
+   margin: 15px 0px;
+}
+.row3 h3 {
+   padding-top: 15px;
+   /* margin:auto; */
+}
+
+.row3 p {
+   padding: 0px;
+   line-height: normal;
+   /* margin:auto; */
+}
+
+
+
+
+
+
+/* search results */
+.each-result ul li {
+   width: 80%;
+   border: #0e8388;
+   border-radius: 5%;
+   border-style: groove;
+   padding: 15px 25px 15px 25px;
+   margin: 15px 100px 5px 100px;
+   list-style: none;
+
+}
+
+.each-result ul li a {
+   color: #000;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.each-result ul li a:hover {
+   color: #0e8388;
+   text-decoration: underline;
+   transition: 0s;
+}
 
 
 

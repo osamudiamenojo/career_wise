@@ -50,12 +50,12 @@
 
         <div class='each-career-info'>
                     <div class="acol">
-                        <h1>{{ occupation.title }}</h1>
-                        <p>Also called: {{occupation.title}} {%for title in occupation.also_called.title%}, {{title}}{%endfor%}.</p>
+                        <h1>{{ occupation.career.title }}</h1>
+                        <p>Also called: {{occupation.career.title}} {%for title in occupation.career.also_called.title%}, {{title}}{%endfor%}.</p>
                         <h3>WHAT WE DO </h3>
-                        <p>{{ occupation.what_they_do}} </p>
+                        <p>{{ occupation.career.what_they_do}} </p>
                         <ul>
-                        {%for items in occupation.on_the_job.task%}
+                        {%for items in occupation.career.on_the_job.task%}
 
                             <li>{{items}}</li>
                         {%endfor%}
@@ -65,6 +65,7 @@
                 </div>
                 
                 <div class="row3">
+                    {%if education%}
                     <h3>EDUCATION</h3>
                     <ul>
                     {%for items in education %}
@@ -73,7 +74,8 @@
                     
                     {%endfor%}
                     </ul>
-                
+                    {% endif %}
+                    {%if knowledge%}
                     <h3>KNOWLEDGE</h3>
                     <ul>
                     {%for items in knowledge%}
@@ -86,7 +88,8 @@
                         
                     {%endfor%}   
                     </ul>           
-                
+                    {%endif%}
+                    {%if skills%}
                     <h3>SKILLS</h3>
                     <ul>
                     {%for items in skills%}
@@ -98,7 +101,59 @@
                                 {%endfor%}
                         
                     {%endfor%}  
-                    </ul>                        
+
+                    </ul>  
+                    {%endif%}  
+
+                    {%if personality%}
+                    <h3>PERSONALITY</h3>
+                    <ul>
+                    <li>{{personality.top_interest.title}}</li>
+                    <p>{{personality.top_interest.description}}
+                    <li> Work Style</li>
+                    {%for items in personality.work_styles.element%}
+                    
+                        <p>{{items.name}} </p>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+
+                    </ul>  
+                    {%endif%} 
+                    {%if abilities%}
+                    <h3>ABILITIES</h3>
+                    <ul>
+                    {%for items in abilities%}
+                    
+                        <li>{{items.title.name}} </li>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+
+                    </ul>  
+                    {%endif%}   
+                    {%if technology%}
+                    <h3>TECHNOLOGY</h3>
+                    <ul>
+                    {%for items in technology %}
+                    
+                        <li>{{items.title.name}} </li>
+                        {%for item in items.example %}
+                    
+                        <p>{{item.name}}</p>
+                        
+                    
+                        {%endfor%}
+                    
+                    {%endfor%}
+                    </ul>
+                    {% endif %}                
                 </div>
             </div>
     </section>

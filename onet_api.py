@@ -29,12 +29,12 @@ class OnetApi:
     
     def _make_request(self, endpoint, params=None,code =None,extra=None):
         if code:
-            if extra:
-                url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/') +'/' + code +'/' + extra
-            else:
-                url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/') +'/' + code
+            # if extra:
+            #     url = self._url_root+ '/' + endpoint +'/' + code +'/' + extra
+            # else:
+                url = self._url_root + '/' + endpoint +'/' + code + '/' + 'report'
         else :
-            url = self._url_root.rstrip('/') + '/' + endpoint.lstrip('/')
+            url = self._url_root + '/' + endpoint
         # url = f"{self._url_root}/{endpoint}"
         response = requests.get(url, headers=self._headers, params=params)
         # response = requests.get(url, headers=self._headers)
@@ -42,7 +42,7 @@ class OnetApi:
         return response.json()
 
     def get_extra_info(self,code,extra):
-        endpoint = '/careers'
+        endpoint = 'careers'
         response_data = self._make_request(endpoint, code=code,extra=extra)
         occupation_data = response_data
         return occupation_data

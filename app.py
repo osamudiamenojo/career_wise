@@ -55,7 +55,7 @@ def signup():
       error = "unsuccesful"
     return redirect(url_for('dashboard')) 
   if form.errors:
-    log_report
+    log_report('nothing')
   return render_template("signup.html", form=form, error=error)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -99,30 +99,30 @@ def search_results():
 
 def extract_resource(occupation):
   lst =[]
-  for items in occupation['resources']['resource']:
+  # log_report(occupation['resources'])
+  for items in occupation['career']['resources']['resource']:
     lst.append(items['title'])
   return lst
 
 @app.route('/occupation/<code>')
 def occupation_details(code):
     occupation = api.get_occupation(code)
-    # resources = occupation['resources']['resource']
     extra = extract_resource(occupation)
-    log_report(extra)
+    # log_report(extra)
     if 'Education' in extra:
-      education_info = api.get_extra_info(code,'education')
-      education = education_info['education_usually_needed']['category']
-
+      education = occupation['education']['education_usually_needed']['category']
     if 'Knowledge' in extra:
-      knowledge_info = api.get_extra_info(code,'knowledge')
-      knowledge = knowledge_info['group']
+      knowledge = occupation['knowledge']['group']
     if 'Skills' in extra:
-      skill_info = api.get_extra_info(code,'skills')
-      skills = skill_info['group']
-    # if 'personality' in extra:
-    #   log_report(api.get_extra_info('personality'))
+      skills = occupation['skills']['group']
+    if 'Personality' in extra:
+      personality = occupation['personality']
+    if 'Abilities' in extra:
+      abilities = occupation['abilities']['group']
+    if 'Technology' in extra:
+      technology = occupation['technology']['category']
     
-    return render_template('eachcareer.html', occupation=occupation,education=education,knowledge=knowledge,skills=skills)
+    return render_template('eachcareer.html', occupation=occupation,education=education,knowledge=knowledge,skills=skills, personality=personality,abilities=abilities,technology=technology)
 
 
 
@@ -140,3 +140,9 @@ def careers():
 @app.route('/eachcareer', methods =['GET'])
 def eachcareer():
     return render_template('eachcareer.html')
+
+# code = '17-1011.00'
+# occupation = api.get_occupation(code)
+
+
+# log_report(education)

@@ -2,12 +2,11 @@ import requests
 import base64
 import json
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 username = os.environ['USERNAME']
 password = os.environ['PASSWORD']
-
-
-
 def log_report(report):
   with open("report.txt", 'a', encoding='utf-8') as f:
         f.write(f'{report}\n')

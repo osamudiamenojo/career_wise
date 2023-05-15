@@ -13,7 +13,6 @@ app.config['UPLOADED_PHOTOS_DEST'] = '/static/images'
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app,photos)
 
-
 class LoginForm(FlaskForm):  
 
   email = EmailField(validators = [InputRequired()])

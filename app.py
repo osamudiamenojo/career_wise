@@ -6,8 +6,7 @@ from models import AppUser as User
 from repository import CareerManagerDB as Queries
 import os
 from werkzeug.security import check_password_hash, generate_password_hash
-from onet_api import OnetApi as ONetAPI
-from private import username, password
+from onet_api import OnetApi as ONetAPI, username, password
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///carrers.db'

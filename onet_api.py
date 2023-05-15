@@ -1,7 +1,11 @@
 import requests
 import base64
 import json
-from private import username, password
+import os
+
+username = os.environ['USERNAME']
+password = os.environ['PASSWORD']
+
 
 
 def log_report(report):

@@ -1,14 +1,7 @@
 import requests
 import base64
 import json
-from dotenv import load_dotenv
-import os
-
-
-
-load_dotenv()
-username = os.environ['USERNAME']
-password = os.environ['PASSWORD']
+from private import username, password
 
 
 def log_report(report):

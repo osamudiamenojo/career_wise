@@ -2,18 +2,10 @@ from flask import Flask, render_template, g, redirect, url_for, request
 from flask_login import login_user, LoginManager, login_required, current_user
 from forms import LoginForm, SignupForm
 from flask_uploads import UploadSet,IMAGES, configure_uploads
-from dotenv import load_dotenv
-
 # from repository import CareerManagerDB as Queries
 import os
 from werkzeug.security import check_password_hash, generate_password_hash
-from onet_api import OnetApi as ONetAPI
-
-load_dotenv()
-username = os.environ['USERNAME']
-
-password = os.environ['PASSWORD']
-
+from onet_api import OnetApi as ONetAPI, username, password
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///carrers.db'

@@ -5,8 +5,9 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-username = os.environ['USERNAME']
+username = os.environ['API_USERNAME']
 password = os.environ['PASSWORD']
+
 def log_report(report):
   with open("report.txt", 'a', encoding='utf-8') as f:
         f.write(f'{report}\n')
@@ -90,5 +91,4 @@ class Occupation:
             for item in education_training:
                 self.education_training.append(item['value'])
 
-api = OnetApi(username=f"{username}", password=f"{password}")
 

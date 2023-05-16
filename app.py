@@ -139,6 +139,20 @@ def careers():
 def eachcareer():
     return render_template('eachcareer.html')
 
+@app.route('/profiler/<start>', methods=["GET", "POST"])
+def profiler(start):
+  results = ["0"]*60
+  if request.method == "POST" :
+    user_answer = request.form["options"]
+  questions = api.get_profiler('questions')
+  # for num in range 
+
+  return render_template('profiler.html',questions)
+
+
+
+
+
 # code = '17-1011.00'
 # occupation = api.get_occupation(code)
 

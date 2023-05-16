@@ -26,6 +26,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+my_env/
+myenv/
 .env
 .venv
 env/
@@ -41,3 +43,11 @@ include
 
 # Cython debug symbols
 cython_debug/
+
+#personal files for @mersaii
+node_modules
+*.json
+my_txt.txt
+
+#for @samadeolu7
+private.py

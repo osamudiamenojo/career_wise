@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>careers</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="{{url_for('index')}}"><img src="../static/images/cwlogo(541).png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{{url_for('index')}}">HOME</a></li>
+                    <li><a href="{{url_for('careers')}}">CAREERS</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">TEAM</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <h1>{{ occupation.title }}</h1>
+
+    </section>
+    <!-- SEARCH BAR -->
+    <div class="container">
+        <form action="" class="search-bar">
+            <input type="text" placeholder="Search any career" name="yut">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass " style="color: #0e8388;"></i></button>
+        </form>
+    </div>
+
+    <!-- CAREERS -->
+    <section class="each-career">
+        <div class='full'>
+            <div class="row1">
+                <div class="acol">
+                    <img src='/static/images/engineer.jpg'>
+                </div>
+
+        <div class='each-career-info'>
+                    <div class="acol">
+                        <h1>{{ occupation.career.title }}</h1>
+                        <p>Also called: {{occupation.career.title}} {%for title in occupation.career.also_called.title%}, {{title}}{%endfor%}.</p>
+                        <h3>WHAT WE DO </h3>
+                        <p>{{ occupation.career.what_they_do}} </p>
+                        <ul>
+                        {%for items in occupation.career.on_the_job.task%}
+
+                            <li>{{items}}</li>
+                        {%endfor%}
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row3">
+                    {%if education%}
+                    <h3>EDUCATION</h3>
+                    <ul>
+                    {%for items in education %}
+                    
+                        <li>{{items}} </li>
+                    
+                    {%endfor%}
+                    </ul>
+                    {% endif %}
+                    {%if knowledge%}
+                    <h3>KNOWLEDGE</h3>
+                    <ul>
+                    {%for items in knowledge%}
+                    
+                        <li>{{items.title.name}} </li>
+            
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                        {%endfor%}
+                        
+                    {%endfor%}   
+                    </ul>           
+                    {%endif%}
+                    {%if skills%}
+                    <h3>SKILLS</h3>
+                    <ul>
+                    {%for items in skills%}
+                    
+                        <li>{{items.title.name}} </li>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+
+                    </ul>  
+                    {%endif%}  
+
+                    {%if personality%}
+                    <h3>PERSONALITY</h3>
+                    <ul>
+                    <li>{{personality.top_interest.title}}</li>
+                    <p>{{personality.top_interest.description}}
+                    <li> Work Style</li>
+                    {%for items in personality.work_styles.element%}
+                    
+                        <p>{{items.name}} </p>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+
+                    </ul>  
+                    {%endif%} 
+                    {%if abilities%}
+                    <h3>ABILITIES</h3>
+                    <ul>
+                    {%for items in abilities%}
+                    
+                        <li>{{items.title.name}} </li>
+                        
+                        {%for item in items.element%}
+                            <p> {{item.name}} </p>
+                                {%endfor%}
+                        
+                    {%endfor%}  
+
+                    </ul>  
+                    {%endif%}   
+                    {%if technology%}
+                    <h3>TECHNOLOGY</h3>
+                    <ul>
+                    {%for items in technology %}
+                    
+                        <li>{{items.title.name}} </li>
+                        {%for item in items.example %}
+                    
+                        <p>{{item.name}}</p>
+                        
+                    
+                        {%endfor%}
+                    
+                    {%endfor%}
+                    </ul>
+                    {% endif %}                
+                </div>
+            </div>
+    </section>
+
+    <!-- footer -->
+    <section class="footer">
+        <h4>About us</h4>
+        <p>we are amazing lorem ipsum .....................</p>
+
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <p><i class="icons fa-regular fa-copyright"></i>copyright CareerWise </p>
+    </section>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

@@ -356,7 +356,120 @@ nav .fa {
    transition: 0s;
 }
 
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   color: black;
+}
 
+body{
+   background-color: #C0C0C0;
+}
+
+main{
+   max-width: 1280px;
+   width: 80%;
+   margin: auto;
+}
+
+
+header{
+   background-color: #0e8388;
+   height: 10vh;
+   display: flex;
+   align-items: center;
+   margin-bottom: 5vh;
+}
+
+header h1{
+   margin-left: 2rem;
+}
+
+.question{
+   padding: 16px;
+   border: 1px solid #8596A0;
+   margin-bottom: 32px;
+
+}
+
+.question-title{
+   margin-left: 4px;
+   font-weight: 400;
+   font-size: 1.5rem;
+   
+}
+
+.question-form{
+   border: 1px solid #8596A0;
+   padding: 16px;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.question-form h1{
+   text-align: center;
+   margin: 2rem 0;
+}
+
+.question-option{
+   display: flex;
+   align-items: center;
+}
+
+.question-option label{
+   display: flex;
+   margin-left: 1rem;
+}
+
+.submit-button{
+   margin: 48px 0px;
+   width: 250px;
+   height: 50px;
+   background-color: #0e8388;
+   color: black;
+}
+
+
+.result{
+   margin-bottom: 2rem;
+   font-size: 4rem;
+}
+
+.answer {
+   display: flex;
+   margin-bottom: .5rem;
+}
+
+.answers {
+   display: flex;
+}
+
+.green {
+   color: aquamarine;
+   margin-left: 20px;
+}
+
+.red {
+   color: crimson;
+   margin-left: 20px;
+}
+
+.play-link{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   width: 15rem;
+   height: 3rem;
+
+   margin-top: 2rem;
+   color: black;
+   border: 1px solid black;
+   background-color: rgb(169, 254, 225);
+}
 
 
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Wise Personality Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Personality Test</h1>
+    </header>
+
+    <main>
+        <form class="question-form" method="post" action="{{ url_for('submit') }}">
+            <h1>{{ quiz.title }}</h1>
+
+            {% for q in quiz.questions %}
+            <fieldset class="question">
+                <legend class="question-title">{{ q.title }}</legend>
+
+                {% for c in q.options %}
+                <div class="question-option">
+                    <input type="radio" name="{{ q.question_id }}" value="{{ c }}" required>
+                    <label>{{ c }}</label>
+                </div>
+                {% endfor %}
+
+            </fieldset>
+            {% endfor %}
+            <input class="submit-button" type="submit" value="Submit">
+        </form>
+
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>

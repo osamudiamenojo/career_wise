@@ -1,6 +1,5 @@
 import requests
 import base64
-import json
 import os
 from dotenv import load_dotenv
 

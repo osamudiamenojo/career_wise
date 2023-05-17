@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>careers</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
-<body>
-    <section class="sub-header">
-        <nav>
-            <a href="{{url_for('index')}}"><img src="../static/images/cwlogo(541).png"></a>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
+{% extends 'base.html' %}
 
-                <ul>
-                    <li><a href="{{url_for('index')}}">HOME</a></li>
-                    <li><a href="{{url_for('careers')}}">CAREERS</a></li>
-                    <li><a href="{{url_for('eachcareer')}}">ABOUT</a></li>
-                    <li><a href="">TEAM</a></li>
-                    <li><a href="">CONTACT</a></li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-
-        <h1>Search Results</h1>
-
-    </section>
-    <!-- SEARCH BAR -->
-    <div class="container">
-        <form action="{{url_for('search_results')}}" class="search-bar" method='post'>
-            <input type="text" placeholder="Search any career" name="yut">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass " style="color: #0e8388;"></i></button>
-        </form>
-    </div>
+{% block content %} 
     
 
     <section class='search-results'>
@@ -56,30 +18,4 @@
       </div>
     </section>
 
-        <!-- footer -->
-        <section class="footer">
-          <h4>About us</h4>
-          <p>we are amazing lorem ipsum .....................</p>
-  
-          <div class="icons">
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-linkedin"></i>
-              <i class="fa-brands fa-twitter"></i>
-              <i class="fa-brands fa-instagram"></i>
-          </div>
-  
-          <p><i class="icons fa-regular fa-copyright"></i>copyright CareerWise </p>
-      </section>
-    <script>
-      var navLinks = document.getElementById("navLinks");
-  
-      function showMenu(){
-          navLinks.style.right = "0";
-      }
-  
-      function hideMenu(){
-          navLinks.style.right = "-200px";
-      }
-  </script>
-  </body>
-</html>
+    {% endblock %}

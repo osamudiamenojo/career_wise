@@ -1,6 +1,5 @@
 from flask import Flask, render_template, g, redirect, url_for, request
 from flask_login import login_user, LoginManager, login_required, current_user
-from forms import LoginForm, SignupForm
 from flask_uploads import UploadSet,IMAGES, configure_uploads
 # from repository import CareerManagerDB as Queries
 import os
@@ -9,7 +8,6 @@ from onet_api import OnetApi as ONetAPI, username, password
 from unsplash_api import UnsplashApi
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///carrers.db'
 app.secret_key = 'CareewiseProjectApplication'
 app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(os.getcwd(), 'static', 'images')
 photos = UploadSet('photos', IMAGES)
@@ -93,4 +91,3 @@ def profiler(start):
   # for num in range 
 
   return render_template('profiler.html',questions)
-

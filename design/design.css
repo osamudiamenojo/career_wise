@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+main{
+    max-width: 1280px;
+    width: 80%;
+    margin: auto;
+}
+
+.question{
+    padding: 16px;
+    border: 1px solid lightgray;
+    margin-bottom: 32px;
+
+}
+
+.question-title{
+    margin-left: 4px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    
+}
+
+.question-form{
+    border: 1px solid lightgray;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.question-form h1{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.question-option{
+    display: flex;
+    align-items: center;
+}
+
+.question-option label{
+    display: flex;
+    margin-left: 1rem;
+}
+
+.submit-button{
+    margin: 24px 0px;
+    width: 250px;
+    height: 50px;
+}

@@ -183,6 +183,10 @@ nav .fa {
    min-height: 15vh;
    padding: 3%;
 }
+ .container a:hover {
+    color: rgb(36, 150, 237); 
+    margin-left: 1vw;
+  }
 
 .search-bar {
    width: 600px;

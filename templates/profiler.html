@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form>
+{%for items in question%}
+<p>{{items.text}}</p>
+
+    {%for option in answer%}
+            <input type="radio" id="red" name="options" value="{{option.value}}" />
+            <label for="red">{{option.name}}</label><br />
+          {%endfor%}
+          {%endfor%}
+</form>
+    
+{% endblock content %}
+    

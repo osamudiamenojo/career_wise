@@ -54,12 +54,16 @@ class OnetApi:
         params = {'keyword': keyword}
         response_data = self._make_request(endpoint, params=params)
         # log_report(response_data)
-        results = response_data['career']
+        if 'career' in response_data:
+            results = response_data['career']
+        else:
+            results={'title': None, 'code':None}
         return [(result['title'],result['code']) for result in results]
     
     def get_profiler(self,questions,start=1):
-        endpoint = f"interestprofiler/{questions}?start={start}&end={start+11}"
+        endpoint = f"interestprofiler/{questions}?start={start}&end={int(start)+11}"
         response_data = self._make_request(endpoint)
-        
         return response_data  
 
+api = OnetApi(username,password)
+log_report(api.get_profiler('questions'))

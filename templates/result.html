@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Wise Personality Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Personality Test</h1>
+    </header>
+
+    <main>
+        <h1 class="result"> The best career choices for you are: OR You got {{ result }} out of {{ total }} You are most suited for a career in XX. </h1>
+
+        {% for q in quiz %}
+
+        <div class="answer">
+            <div class="answer-title">{{ q[0] }}</div>
+
+            <div class="answers">
+                
+                {% if q[1] == q[2] %}
+                <div class="answers-correct green">{{ q[1] }}</div>
+                {% else %}
+                <div class="answers-correct green">{{ q[1] }}</div>
+                <div class="answers-user red"> {{ q[2] }}</div>
+                {% endif %}
+            </div>
+        </div>
+
+
+        {% endfor %}
+        <a class="play-link" href="{{ url_for('index') }}">Attempt Quiz Again!</a>
+    </main>
+    
+    <footer>
+
+    </footer>
+</body>
+</html>

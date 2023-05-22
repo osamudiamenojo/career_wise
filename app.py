@@ -16,6 +16,7 @@ configure_uploads(app,photos)
 CareerApi = ONetAPI(username=f"{username}", password=f"{password}")
 ImageApi = UnsplashApi()
 
+
 @app.before_request
 def before_request():
   g.user = current_user
@@ -78,18 +79,27 @@ def search():
 def careers():
     return render_template('careers.html')
 
-@app.route('/eachcareer', methods =['GET'])
-def eachcareer():
-    return render_template('eachcareer.html')
 
 @app.route('/profiler/<start>', methods=["GET", "POST"])
 def profiler(start):
-  results = ["0"]*60
   if request.method == "POST" :
-    user_answer = request.form["options"]
+    user_answer = request.form.to_dict()
+    for i,j in user_answer.items():
+      CareerApi.RESULTS[int(i)-1]=j
+    log_report(CareerApi.RESULTS)
   questions = CareerApi.get_profiler('questions',start)
   question = questions['question']
   answer = questions['answer_options']['answer_option']
+  return render_template('profiler.html',question=question, answer=answer,start=start)
 
+@app.route("/profiler/results",methods=['POST'])
+def results():
+  user_answer = request.form.to_dict()
+  for i,j in user_answer.items():
+    CareerApi.RESULTS[int(i)-1]=j
+  log_report(CareerApi.RESULTS)
+  results = CareerApi.get_profiler_results()
+  result  = results['career']
+  return render_template('result.html',result = result)
 
-  return render_template('profiler.html',question=question, answer=answer)
+  

@@ -14,7 +14,7 @@ def log_report(report):
 
 class OnetApi:
     # API_BASE_URL = 'https://services.onetcenter.org/ws'
-    
+    RESULTS = ["0"]*60    
     def __init__(self, username, password):
         self.username = username
         self.password = password
@@ -42,7 +42,7 @@ class OnetApi:
         return response.json()
 
     def get_occupation(self, code):
-        endpoint = '/careers'    
+        endpoint = 'careers'    
         response_data = self._make_request(endpoint, code=code)
         # log_report(response_data)
         occupation_data = response_data
@@ -65,5 +65,13 @@ class OnetApi:
         response_data = self._make_request(endpoint)
         return response_data  
 
+    def get_profiler_results(self):
+        answer_string =''.join(str(x) for x in self.RESULTS)
+        endpoint = f"interestprofiler/careers?answers={answer_string}"
+        response_data = self._make_request(endpoint)
+        return response_data
+
+
 api = OnetApi(username,password)
-log_report(api.get_profiler('questions'))
+api.RESULTS= ['3', '3', '5', '5', '4', '5', '2', '4', '3', '2', '3', '3', '4', '4', '2', '5', '4', '4', '3', '2', '2', '4', '4', '3', '4', '1', '2', '4', '2', '1', '1', '1', '3', '3', '1', '3', '3', '4', '4', '2', '4', '1', '1', '1', '1', '1', '1', '1', '5', '2', '2', '2', '3', '2', '2', '4', '2', '2', '2', '2']
+log_report(api.get_profiler_results())

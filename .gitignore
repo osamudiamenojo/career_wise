@@ -39,10 +39,12 @@ venv.bak/
 pyvenv.cfg
 bin
 include
-
+#api report
+report.txt
 
 # Cython debug symbols
 cython_debug/
+
 
 #personal files for @mersaii
 node_modules

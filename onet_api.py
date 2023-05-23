@@ -14,7 +14,7 @@ def log_report(report):
 
 class OnetApi:
     # API_BASE_URL = 'https://services.onetcenter.org/ws'
-    RESULTS = ["0"]*60    
+    RESULTS = ["1"]*60    
     def __init__(self, username, password):
         self.username = username
         self.password = password

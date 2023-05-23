@@ -3,10 +3,10 @@
 
 {% block content %}
 
-{{for items in result }}
+{%for items in result %}
 <h2>fit : {{items.fit}}</h2>
 <a href='{{url_for("occupation_details",code = items.code)}}'><h2> Title : {{items.title}}</h2></a>
 
-    
+{% endfor %}
 {% endblock content %}
     

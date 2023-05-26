@@ -7,21 +7,12 @@
         <p>Click on an industry you prefer</p>
 
         <div class="row">
+            {%for industry in industries.industry%}
             <div class="career-col">
-                <h3>Scientist</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam nemo, aliquam voluptatem impedit ratione, quod autem ad consequuntur praesentium rem laborum ut tempora ex fuga delectus, voluptates pariatur. Animi, quibusdam.</p>
+                <h3>{{industry.title}}</h3>
+                <p>We can input stuff here or not</p>
             </div>
-
-            <div class="career-col">
-                <h3>Engineer</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam nemo, aliquam voluptatem impedit ratione, quod autem ad consequuntur praesentium rem laborum ut tempora ex fuga delectus, voluptates pariatur. Animi, quibusdam.</p>
-            </div>
-
-            <div class="career-col">
-                <h3>Product Designer</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam nemo, aliquam voluptatem impedit ratione, quod autem ad consequuntur praesentium rem laborum ut tempora ex fuga delectus, voluptates pariatur. Animi, quibusdam.</p>
-            </div>
-        </div>
+            {%endfor%}
 
     </section>
 

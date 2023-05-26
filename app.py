@@ -35,9 +35,10 @@ def index():
 @app.route('/search_results', methods=['POST'])
 def search_results():
     keyword = request.form['yut'] #to be changed
-    occupation_codes = CareerApi.search_occupations(keyword)#use better names
-    
-    return render_template('search_result.html', occupations=occupation_codes)
+    occupation = CareerApi.search_occupations(keyword)#use better names
+    if occupation[0] == None:
+      occupation = None
+    return render_template('search_result.html', occupations=occupation)
 
 def extract_resource(occupation):
   lst =[]
@@ -55,29 +56,30 @@ def occupation_details(code):
     if 'Education' in extra:
       if 'education_usually_needed' in occupation['education']:
         education = occupation['education']['education_usually_needed']['category']
-    
+
     if 'Knowledge' in extra:
       knowledge = occupation['knowledge']['group']
+
     if 'Skills' in extra:
       skills = occupation['skills']['group']
+
     if 'Personality' in extra:
       personality = occupation['personality']
+
     if 'Abilities' in extra:
       abilities = occupation['abilities']['group']
+
     if 'Technology' in extra:
       technology = occupation['technology']['category']
     
     return render_template('eachcareer.html', occupation=occupation,education=education,knowledge=knowledge,skills=skills, personality=personality,abilities=abilities,technology=technology,img_src=img_src)
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-
-  return render_template('search.html')
-
 
 @app.route('/careers', methods = ['GET'])
 def careers():
-    return render_template('careers.html')
+  industries = CareerApi.get_industries()
+  log_report(industries)
+  return render_template('careers.html', industries = industries)
 
 
 @app.route('/profiler/<start>', methods=["GET", "POST"])
@@ -101,5 +103,3 @@ def results():
   results = CareerApi.get_profiler_results()
   result  = results['career']
   return render_template('result.html',result = result)
-
-  

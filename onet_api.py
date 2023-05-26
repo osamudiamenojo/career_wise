@@ -14,8 +14,10 @@ def log_report(report):
 
 class OnetApi:
     # API_BASE_URL = 'https://services.onetcenter.org/ws'
-    RESULTS = ["1"]*60    
+    
     def __init__(self, username, password):
+        self.profiler = 60
+        self.result = ["1"]*self.profiler
         self.username = username
         self.password = password
         self._headers = {
@@ -26,7 +28,7 @@ class OnetApi:
     
     def set_version(self, version = None):
         if version is None:
-            self._url_root = 'https://services.onetcenter.org/ws/mnm'
+            self._url_root = 'https://services.onetcenter.org/ws'
         else:
             self._url_root = 'https://services.onetcenter.org/v' + version + '/ws/'
     
@@ -42,7 +44,7 @@ class OnetApi:
         return response.json()
 
     def get_occupation(self, code):
-        endpoint = 'careers'    
+        endpoint = 'mnm/careers'    
         response_data = self._make_request(endpoint, code=code)
         # log_report(response_data)
         occupation_data = response_data
@@ -50,28 +52,38 @@ class OnetApi:
         return occupation_data  
 
     def search_occupations(self, keyword):
-        endpoint = 'search'
+        endpoint = 'mnm/search'
         params = {'keyword': keyword}
         response_data = self._make_request(endpoint, params=params)
         # log_report(response_data)
         if 'career' in response_data:
             results = response_data['career']
+            return [(result['title'],result['code']) for result in results]
         else:
             results={'title': None, 'code':None}
-        return [(result['title'],result['code']) for result in results]
+            return (None,None)
     
-    def get_profiler(self,questions,start=1):
-        endpoint = f"interestprofiler/{questions}?start={start}&end={int(start)+11}"
-        response_data = self._make_request(endpoint)
-        return response_data  
-
-    def get_profiler_results(self):
-        answer_string =''.join(str(x) for x in self.RESULTS)
-        endpoint = f"interestprofiler/careers?answers={answer_string}"
+    def get_profiler(self, questions, start=1):
+        end = int(start) + 11
+        if end > self.profiler:
+            end = self.profiler
+        endpoint = f"mnm/interestprofiler/{questions}?start={start}&end={end}"
         response_data = self._make_request(endpoint)
         return response_data
 
 
-api = OnetApi(username,password)
-api.RESULTS= ['3', '3', '5', '5', '4', '5', '2', '4', '3', '2', '3', '3', '4', '4', '2', '5', '4', '4', '3', '2', '2', '4', '4', '3', '4', '1', '2', '4', '2', '1', '1', '1', '3', '3', '1', '3', '3', '4', '4', '2', '4', '1', '1', '1', '1', '1', '1', '1', '5', '2', '2', '2', '3', '2', '2', '4', '2', '2', '2', '2']
-log_report(api.get_profiler_results())
+    def get_profiler_results(self):
+        answer_string =''.join(str(x) for x in self.RESULTS)
+        endpoint = f"mnm/interestprofiler/careers?answers={answer_string}"
+        response_data = self._make_request(endpoint)
+        return response_data
+
+    def get_industries(self):
+        endpoint ='online/industries'
+        response_data = self._make_request(endpoint)
+        log_report(response_data)
+        return response_data
+
+# api = OnetApi(username,password)
+# api.RESULTS= ['3', '3', '5', '5', '4', '5', '2', '4', '3', '2', '3', '3', '4', '4', '2', '5', '4', '4', '3', '2', '2', '4', '4', '3', '4', '1', '2', '4', '2', '1', '1', '1', '3', '3', '1', '3', '3', '4', '4', '2', '4', '1', '1', '1', '1', '1', '1', '1', '5', '2', '2', '2', '3', '2', '2', '4', '2', '2', '2', '2']
+# log_report(api.get_profiler_results())

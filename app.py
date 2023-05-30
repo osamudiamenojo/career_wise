@@ -87,8 +87,8 @@ def profiler(start):
   if request.method == "POST" :
     user_answer = request.form.to_dict()
     for i,j in user_answer.items():
-      CareerApi.RESULTS[int(i)-1]=j
-    log_report(CareerApi.RESULTS)
+      CareerApi.result[int(i)-1]=j
+    # log_report(CareerApi.result)
   questions = CareerApi.get_profiler('questions',start)
   question = questions['question']
   answer = questions['answer_options']['answer_option']
@@ -98,8 +98,8 @@ def profiler(start):
 def results():
   user_answer = request.form.to_dict()
   for i,j in user_answer.items():
-    CareerApi.RESULTS[int(i)-1]=j
-  log_report(CareerApi.RESULTS)
+    CareerApi.result[int(i)-1]=j
+  # log_report(CareerApi.result)
   results = CareerApi.get_profiler_results()
   result  = results['career']
   return render_template('result.html',result = result)

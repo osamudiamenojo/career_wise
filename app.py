@@ -1,26 +1,13 @@
 from flask import Flask, render_template, g, redirect, url_for, request
-from flask_login import login_user, LoginManager, login_required, current_user
-from flask_uploads import UploadSet,IMAGES, configure_uploads
-# from repository import CareerManagerDB as Queries
 import os
-from werkzeug.security import check_password_hash, generate_password_hash
 from onet_api import OnetApi as ONetAPI, username, password
 from unsplash_api import UnsplashApi
 
 app = Flask(__name__)
 app.secret_key = 'CareewiseProjectApplication'
-app.config['UPLOADED_PHOTOS_DEST'] = os.path.join(os.getcwd(), 'static', 'images')
-photos = UploadSet('photos', IMAGES)
-configure_uploads(app,photos)
 
 CareerApi = ONetAPI(username=f"{username}", password=f"{password}")
 ImageApi = UnsplashApi()
-
-
-@app.before_request
-def before_request():
-  g.user = current_user
-
 
 def log_report(report):
   with open("report.txt", 'a', encoding='utf-8') as f:

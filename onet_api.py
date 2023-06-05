@@ -14,7 +14,7 @@ def log_report(report):
 
 class OnetApi:
     # API_BASE_URL = 'https://services.onetcenter.org/ws'
-    
+
     def __init__(self, username, password):
         self.profiler = 60
         self.result = ["1"]*self.profiler
@@ -70,7 +70,6 @@ class OnetApi:
         endpoint = f"mnm/interestprofiler/{questions}?start={start}&end={end}"
         response_data = self._make_request(endpoint)
         return response_data
-
 
     def get_profiler_results(self):
         answer_string =''.join(str(x) for x in self.RESULTS)

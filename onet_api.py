@@ -72,7 +72,7 @@ class OnetApi:
         return response_data
 
     def get_profiler_results(self):
-        answer_string =''.join(str(x) for x in self.RESULTS)
+        answer_string =''.join(str(x) for x in self.result)
         endpoint = f"mnm/interestprofiler/careers?answers={answer_string}"
         response_data = self._make_request(endpoint)
         return response_data

@@ -24,8 +24,14 @@
             {%endfor%}
           </div>
           {%endfor%}
+    {%if starts > 59 %}
 
     <input type ="submit" value ="submit" class ="submit-btn" >
+    {%else%}
+
+    <input type ="submit" value ="Next" class ="submit-btn" >
+    {%endif%}
+
   </div>
 </form>
 

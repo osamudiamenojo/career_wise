@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
     <!-- CAREERS -->
     <section class="careers">
         <h1>Career List</h1>
         <p>Click on an industry you prefer</p>
+    </section>
 
-        <div class="row">
+        <div id="container-1">
             {%for industry in industries.industry%}
             <div class="career-col">
                 <h3>{{industry.title}}</h3>
-                <p>We can input stuff here or not</p>
             </div>
             {%endfor%}
+    
+        </div>
+    
 
-    </section>
 
-    {% endblock content %}
+
+
+{% endblock content %}
 

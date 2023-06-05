@@ -229,10 +229,11 @@ nav .fa {
 /* careers */
 .careers {
    width: 80%;
-   height: 100vh;
+   height: auto;
    margin: auto;
    text-align: center;
    padding-top: 50px;
+   /* clear: both; */
 }
 
 .careers h1 {
@@ -247,13 +248,60 @@ nav .fa {
    padding: 10px;
 }
 
-.row {
+#container-1 *{
+   margin: 10px;
+   padding: 0;
+   box-sizing: border-box;
+   height: auto;
+
+}
+#container-1{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   /* margin: 10px; */
+   
+}
+
+.career-col{
+   width: 200px;
+   height: 150px;
+   background: #0e8388;
+   color: #fff;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.ptest-container{
+   /* width: 90%; */
+   color: black;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   /* position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); */
+}
+
+#ptest{
+   border: #000 1px solid;
+   color: #000;
+}
+
+.ptest-container p{
+   margin: 0 0 20px 0;
+}
+/* career by industry initial css */
+/* .row {
    margin: 5%;
    display: flex;
    justify-content: space-between;
-}
+} */
 
-.career-col {
+/* .career-col {
    flex-basis: 31%;
    background: #0e8388;
    border-radius: 10px;
@@ -272,13 +320,15 @@ nav .fa {
 
 .career-col:hover {
    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
-}
+} */
 
-@media(max-width: 700px) {
+/* @media(max-width: 700px) {
    .row {
        flex-direction: column;
    }
-}
+} */
+/*  career by industry initial css  */
+
 
 /* EACH CAREER */
 .each-career {
@@ -360,7 +410,35 @@ nav .fa {
    transition: 0s;
 }
 
-*{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -473,7 +551,7 @@ header h1{
    color: black;
    border: 1px solid black;
    background-color: rgb(169, 254, 225);
-}
+} */
 
 
 

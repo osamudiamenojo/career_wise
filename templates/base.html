@@ -40,10 +40,13 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass " style="color: #0e8388;"></i></button>
         </form>
     </div>
-    <p class="container">Don't Know what you are searching for?  You can take a career test <a href="{{url_for('profiler', start='1')}}">here</a></p>
-    
 
-      {% block content %}  {% endblock %}
+    <div class="ptest-container">
+    <p>Not sure what you're interested in?  Take a career test > </p>
+    <a href="{{url_for('profiler', start='1')}}" class="hero-btn" id="ptest">here</a>
+    </div>
+
+    {% block content %}  {% endblock %}
 
     <!-- Footer 
     <footer class="text-muted py-5 border-top border-dark" style="margin-top: auto; padding: 2rem 0 2rem 0;">
@@ -57,7 +60,7 @@
 
     <section class="footer">
       <h4>About us</h4>
-      <p>we are amazing lorem ipsum .....................</p>
+      <p>we are aspiring software engineers fixing problems one code at a time</p>
 
       <div class="icons">
           <i class="fa-brands fa-facebook"></i>

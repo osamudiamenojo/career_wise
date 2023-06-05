@@ -265,6 +265,17 @@ nav .fa {
    
 }
 
+#container-1 a{
+   color: #fff;
+   text-decoration: none;
+
+}
+
+#container-1 a:hover{
+   text-decoration: underline;
+   transition: 0s;
+}
+
 .career-col{
    width: 200px;
    height: 150px;
@@ -294,40 +305,6 @@ nav .fa {
 .ptest-container p{
    margin: 0 0 20px 0;
 }
-/* career by industry initial css */
-/* .row {
-   margin: 5%;
-   display: flex;
-   justify-content: space-between;
-} */
-
-/* .career-col {
-   flex-basis: 31%;
-   background: #0e8388;
-   border-radius: 10px;
-   margin-bottom: 5%;
-   padding: 20px 12px;
-   box-sizing: border-box;
-   color: #fff;
-   transition: 0.5s;
-}
-
-.career-col h3 {
-   text-align: center;
-   font-weight: 600;
-   margin: 10px;
-}
-
-.career-col:hover {
-   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.6);
-} */
-
-/* @media(max-width: 700px) {
-   .row {
-       flex-direction: column;
-   }
-} */
-/*  career by industry initial css  */
 
 
 /* EACH CAREER */
@@ -411,13 +388,45 @@ nav .fa {
 }
 
 
+/* profiler.html */
 
+#profiler-1{
+   padding: 20px;
+   margin: 0;
+   width: 80%;
+   border: #0e8388;
+   border-radius: 20px;
+   border-style: groove;
+   padding: 15px 25px 15px 25px;
+   margin: 15px 100px 5px 100px;
+}
 
+#profiler-1 p{
+   margin: 20px 0 0 0;
+}
 
+#profiler-1 form{
+   display: block;
+}
 
+.submit-btn{
+   display: inline-block;
+   text-decoration: none;
+   border: 1px solid #000;
+   padding: 10px 20px;
+   font-size: 15px;
+   background: transparent;
+   position: relative;
+   cursor: pointer;
+   color: #000;
+   margin-top: 20px;
+}
 
-
-
+.submit-btn:hover{
+   border: 1px solid #0e8388;
+   background: #0e8388;
+   transition: 1s; 
+}
 
 
 

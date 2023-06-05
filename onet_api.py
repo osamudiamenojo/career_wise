@@ -80,9 +80,13 @@ class OnetApi:
     def get_industries(self):
         endpoint ='online/industries'
         response_data = self._make_request(endpoint)
-        log_report(response_data)
         return response_data
 
+    def get_career(self,code):
+        endpoint = f'online/industries/{code}'
+        response_data = self._make_request(endpoint)
+        return response_data['occupation']
+
 # api = OnetApi(username,password)
-# api.RESULTS= ['3', '3', '5', '5', '4', '5', '2', '4', '3', '2', '3', '3', '4', '4', '2', '5', '4', '4', '3', '2', '2', '4', '4', '3', '4', '1', '2', '4', '2', '1', '1', '1', '3', '3', '1', '3', '3', '4', '4', '2', '4', '1', '1', '1', '1', '1', '1', '1', '5', '2', '2', '2', '3', '2', '2', '4', '2', '2', '2', '2']
-# log_report(api.get_profiler_results())
+
+# log_report(api.get_career(71))

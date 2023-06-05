@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    
+
+    <section class='search-results'>
+      <div class='each-result'>
+        {% if occupations %}
+          <ul>
+            {% for occupation in occupations %}
+              <li><a href="{{ url_for('occupation_details', code=occupation.code) }}">{{ occupation.title}}</a></li><br>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <ul><li>No results found.</li></ul>
+        {% endif %}
+
+      </div>
+    </section>
+
+    {% endblock %}

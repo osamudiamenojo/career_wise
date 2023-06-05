@@ -12,7 +12,7 @@
         <div id="container-1">
             {%for industry in industries.industry%}
             <div class="career-col">
-                <h3>{{industry.title}}</h3>
+                <a href="{{url_for('careers_in_industry',code = industry.code)}}"><h3>{{industry.title}}</h3> </a>
             </div>
             {%endfor%}
     

@@ -2,23 +2,36 @@
 
 
 {% block content %}
+
+<div id="profiler-1">
 {%set starts = start|int +12 %}
 {%if starts <= 60 %}
 {% set profiler = url_for('profiler', start=starts) %}
 {%else%}
 {% set profiler = url_for('results') %}
 {%endif%}
+
+
 <form action ={{profiler}} method = 'post'>
 {%for items in question%}
 <p>{{items.text}}</p>
 
+<div class="profiler-option">
     {%for option in answer%}
             <input type="radio" id="red" name="{{items.index}}" value="{{option.value}}" />
             <label for="red">{{option.name}}</label><br />
+          
+            {%endfor%}
+          </div>
           {%endfor%}
-          {%endfor%}
-    <input type ="submit" value ="submit" >
+
+    <input type ="submit" value ="submit" class ="submit-btn" >
+  </div>
 </form>
-    
+
+
+
+
 {% endblock content %}
+
     

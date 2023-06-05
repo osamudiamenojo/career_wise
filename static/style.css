@@ -306,6 +306,51 @@ nav .fa {
    margin: 0 0 20px 0;
 }
 
+.ptest-container ul{
+   list-style: none;
+   /* background: #0e8388; */
+
+}
+
+.ptest-container ul li{
+   display: inline-block;
+   position: relative;
+   margin: 15px;
+
+}
+
+/* .ptest-container ul li a{
+   display: block;
+   padding: 20px 25px;
+   color: #000;
+   text-decoration: none;
+   text-align: center;
+   font-size: 20px;
+} */
+
+/* .ptest-container ul li ul.dropdown li{
+   display: block;
+} 
+*/
+
+.ptest-container ul li ul.dropdown{
+   /* width: 100px; */
+   /* background: #0e8388;
+   position: absolute;
+   z-index: 999; */
+   margin: 15px;
+   display: none;
+} 
+
+.ptest-container ul li a:hover{
+   background: #0e8388;
+}
+ 
+.ptest-container ul li:hover ul.dropdown{
+   display: block;
+
+} 
+
 
 /* EACH CAREER */
 .each-career {

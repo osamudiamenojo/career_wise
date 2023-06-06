@@ -98,7 +98,10 @@ def results():
 def about():
   return render_template("about.html")
 
+@app.route("/project_team", methods=["GET"])
+def project_team():
+  return render_template("project_team.html")
 
-@app.route("/team", methods=["GET"])
-def team():
-  return render_template("team.html")
+@app.route("/contact", methods=["GET"])
+def contact():
+  return render_template("contact.html")

@@ -524,10 +524,19 @@ nav .fa {
 /* about */
 
 .about * {
-   max-width: 70%;
-   height: 100vh;
-
+   width: 70%;
+   margin: auto;
 }
+
+.about h1{
+   margin: 20px   0p;
+   text-align: center;
+}
+
+
+/* team */
+
+
 
 
 

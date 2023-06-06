@@ -474,11 +474,60 @@ nav .fa {
 }
 
 
+/* Result page */
+
+#container-2 *{
+   margin: 10px;
+   padding: 0;
+   box-sizing: border-box;
+   height: auto;
+
+}
+#container-2{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   /* margin: 10px; */
+   
+}
+
+#container-2 a{
+   color: #fff;
+   text-decoration: none;
+   /* font-size: 10px;
+   font-weight: 100; */
+
+}
+
+#container-2 a:hover{
+   text-decoration: underline;
+   transition: 0s;
+}
+
+.result-col{
+   width: 200px;
+   height: 150px;
+   background: #0e8388;
+   color: #fff;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.result{
+   text-align: center;
+   margin: 20px 0;
+}
 
 
+/* about */
 
+.about * {
+   max-width: 70%;
+   height: 100vh;
 
-
+}
 
 
 

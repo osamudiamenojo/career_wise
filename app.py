@@ -94,3 +94,11 @@ def results():
   result  = results['career']
   return render_template('result.html',result = result)
 
+@app.route("/about", methods=["GET"])
+def about():
+  return render_template("about.html")
+
+
+@app.route("/team", methods=["GET"])
+def team():
+  return render_template("team.html")

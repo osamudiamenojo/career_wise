@@ -72,17 +72,17 @@ def careers_in_industry(code):
   careers = CareerApi.get_careers(code)
   return render_template('industry.html', careers = careers)
 
-@app.route('/profiler/<start>', methods=["GET", "POST"])
-def profiler(start):
+@app.route('/profiler/<question>/<start>', methods=["GET", "POST"])
+def profiler(question,start):
   if request.method == "POST" :
     user_answer = request.form.to_dict()
     for i,j in user_answer.items():
       CareerApi.result[int(i)-1]=j
     # log_report(CareerApi.result)
-  questions = CareerApi.get_profiler('questions',start)
-  question = questions['question']
+  questions = CareerApi.get_profiler(question,start)
+  quest = questions['question']
   answer = questions['answer_options']['answer_option']
-  return render_template('profiler.html',question=question, answer=answer,start=start)
+  return render_template('profiler.html',question=quest, answer=answer,start=start,type=question,max=CareerApi.profiler)
 
 @app.route("/profiler/results",methods=['POST'])
 def results():
@@ -93,3 +93,4 @@ def results():
   results = CareerApi.get_profiler_results()
   result  = results['career']
   return render_template('result.html',result = result)
+

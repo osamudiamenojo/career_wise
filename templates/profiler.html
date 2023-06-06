@@ -5,8 +5,8 @@
 
 <div id="profiler-1">
 {%set starts = start|int +12 %}
-{%if starts <= 60 %}
-{% set profiler = url_for('profiler', start=starts) %}
+{%if starts <= max %}
+{% set profiler = url_for('profiler',question=type ,start=starts) %}
 {%else%}
 {% set profiler = url_for('results') %}
 {%endif%}

@@ -65,6 +65,8 @@ class OnetApi:
     
     def get_profiler(self, questions, start=1):
         end = int(start) + 11
+        if questions=="questions_30":
+            self.profiler=30
         if end > self.profiler:
             end = self.profiler
         endpoint = f"mnm/interestprofiler/{questions}?start={start}&end={end}"

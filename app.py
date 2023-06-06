@@ -72,7 +72,7 @@ def careers_in_industry(code):
   careers = CareerApi.get_career(code)
   return render_template('industry.html', occupations = careers)
 
-@app.route('/profiler/<question>/<start>', methods=["GET", "POST"])
+@app.route('/profiler/<question>/<int:start>', methods=["GET", "POST"])
 def profiler(question,start):
   
   if request.method == "POST" :

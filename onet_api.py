@@ -65,6 +65,8 @@ class OnetApi:
     
     def get_profiler(self, questions, start=1):
         end = int(start) + 11
+        if questions=="questions_30":
+            self.profiler=30
         if end > self.profiler:
             end = self.profiler
         endpoint = f"mnm/interestprofiler/{questions}?start={start}&end={end}"
@@ -87,6 +89,6 @@ class OnetApi:
         response_data = self._make_request(endpoint)
         return response_data['occupation']
 
-# api = OnetApi(username,password)
+api = OnetApi(username,password)
 
-# log_report(api.get_career(71))
+log_report(api.get_career(71))

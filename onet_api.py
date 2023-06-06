@@ -89,6 +89,6 @@ class OnetApi:
         response_data = self._make_request(endpoint)
         return response_data['occupation']
 
-# api = OnetApi(username,password)
+api = OnetApi(username,password)
 
-# log_report(api.get_career(71))
+log_report(api.get_career(71))

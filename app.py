@@ -69,8 +69,8 @@ def careers():
 
 @app.route('/industry/<code>', methods = ['GET'])
 def careers_in_industry(code):
-  careers = CareerApi.get_careers(code)
-  return render_template('industry.html', careers = careers)
+  careers = CareerApi.get_career(code)
+  return render_template('industry.html', occupations = careers)
 
 @app.route('/profiler/<question>/<start>', methods=["GET", "POST"])
 def profiler(question,start):

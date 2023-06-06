@@ -1,0 +1,669 @@
+* {
+  margin: 0; 
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+   min-height: 100vh;
+   width: 100%;
+   background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../images/mulgradstudent.jpg);
+   background-position: center;
+   background-size: cover;
+   position: relative;
+}
+
+nav {
+   display: flex;
+   padding: 2% 6%;
+   justify-content: space-between;
+   align-items: center;
+}
+
+nav img {
+   width: 200px;
+}
+
+.nav-links {
+   flex: 1;
+   text-align: right;
+}
+
+.nav-links ul li {
+   list-style: none;
+   display: inline-block;
+   padding: 8px 12px;
+   position: relative;
+}
+
+.nav-links ul li a {
+   color: white;
+   text-decoration: none;
+   font-size: 17px;
+   /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.nav-links ul li::after {
+   content: '';
+   width: 0%;
+   height: 2px;
+   background: #0e8388;
+   display: block;
+   margin:auto;
+   transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+   width: 100%;
+}
+
+.text-box {
+   width: 90%;
+   color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+}
+
+.text-box h1{
+   font-size: 55px;
+}
+
+.text-box p{
+   margin: 10px 0 40px;
+   font-size: 14px;
+}
+
+.hero-btn {
+   display: inline-block;
+   text-decoration: none;
+   border: 1px solid #fff;
+   padding: 12px 34px;
+   font-size: 20px;
+   background: transparent;
+   position: relative;
+   cursor: pointer;
+   color: #fff;
+   /* font-weight: bold; */
+
+}
+
+.hero-btn:hover {
+   border: 1px solid #0e8388;
+   background: #0e8388;
+   transition: 1s;
+}
+
+nav .fa {
+   display: none;
+}
+
+@media(max-width: 700px) {
+   .text-box h1{
+       font-size: 20px;
+   }
+
+   .nav-links ul li {
+       display: block;
+   }
+
+   .nav-links {
+       position: absolute;
+       background: #0e8388;
+       height: 100vh;
+       width: 200px;
+       top: 0;
+       right: -300px;
+       text-align: left;
+       z-index: 2;
+       transition: 1s;
+   }
+
+   nav .fa {
+       display: block;
+       color: #fff;
+       margin: 10px;
+       font-size: 22px;
+       cursor: pointer;
+   }
+
+   .nav-links ul {
+       padding: 30px;
+   }
+}
+
+
+/* ------------- footer ------------ */
+
+.footer {
+   /* width: 100px; */
+   text-align: center;
+   padding: 30px 0;
+}
+
+.footer h4 {
+   margin-bottom: 25px;
+   margin-top: 25px;
+}
+
+.icons {
+   color: #0e8388;
+
+}
+
+.icons i {
+   padding-right: 10px;
+}
+
+/* career sub header */
+.sub-header {
+   height: 50vh;
+   width: 100%;
+   background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../images/mulgradstudent.jpg);
+   background-position: center;
+   background-size: cover;
+   /* position: relative; */
+   text-align: center;
+   color: #fff;
+}
+
+.sub-header h1 {
+   margin-top: 20px;
+   font-size: 40px;
+   letter-spacing: 4px;
+}
+
+/* search bar */
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 15vh;
+   padding: 3%;
+}
+ .container a:hover {
+    color: rgb(36, 150, 237); 
+    margin-left: 1vw;
+  }
+
+.search-bar {
+   width: 600px;
+   max-width: 700px;
+   background: #0e8388;
+   opacity: 0.8;
+   display: flex;
+   align-items: center;
+   border-radius: 60px;
+   padding: 20px;
+}
+
+.search-bar input {
+   background: transparent;
+   flex: 1;
+   border: 0;
+   outline: none;
+   padding: 24px, 20px;
+   font-size: 20px;
+   color: white;
+}
+
+::placeholder {
+   color: #fff;
+}
+
+.search-bar button i{
+   width: 25px;
+}
+
+.search-bar button {
+   border: 0;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   background: #fff;
+   cursor: pointer;
+}
+
+/* careers */
+.careers {
+   width: 80%;
+   height: auto;
+   margin: auto;
+   text-align: center;
+   padding-top: 50px;
+   /* clear: both; */
+}
+
+.careers h1 {
+   font-size: 36px;
+   font-weight: 600;
+}
+
+.careers p {
+   font-size: 14px;
+   font-weight: 300;
+   line-height: 22px;
+   padding: 10px;
+}
+
+#container-1 *{
+   margin: 10px;
+   padding: 0;
+   box-sizing: border-box;
+   height: auto;
+
+}
+#container-1{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   /* margin: 10px; */
+   
+}
+
+#container-1 a{
+   color: #fff;
+   text-decoration: none;
+
+}
+
+#container-1 a:hover{
+   text-decoration: underline;
+   transition: 0s;
+}
+
+.career-col{
+   width: 200px;
+   height: 150px;
+   background: #0e8388;
+   color: #fff;
+   text-align: center;
+   border-radius: 10px;
+}
+
+.ptest-container{
+   /* width: 90%; */
+   color: black;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   /* position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); */
+}
+
+#ptest{
+   border: #000 1px solid;
+   color: #000;
+}
+
+.ptest-container p{
+   margin: 0 0 20px 0;
+}
+
+.ptest-container ul{
+   list-style: none;
+   /* background: #0e8388; */
+
+}
+
+.ptest-container ul li{
+   display: inline-block;
+   position: relative;
+   margin: 15px;
+
+}
+
+/* .ptest-container ul li a{
+   display: block;
+   padding: 20px 25px;
+   color: #000;
+   text-decoration: none;
+   text-align: center;
+   font-size: 20px;
+} */
+
+/* .ptest-container ul li ul.dropdown li{
+   display: block;
+} 
+*/
+
+.ptest-container ul li ul.dropdown{
+   /* width: 100px; */
+   /* background: #0e8388;
+   position: absolute;
+   z-index: 999; */
+   margin: 15px;
+   display: none;
+} 
+
+.ptest-container ul li a:hover{
+   background: #0e8388;
+}
+ 
+.ptest-container ul li:hover ul.dropdown{
+   display: block;
+
+} 
+
+
+/* EACH CAREER */
+.each-career {
+   width: 80%;
+   /* min-height: 100vh; */
+   margin: auto;
+   /* background: #0e8388;
+   color: #fff; */
+   padding-top: 20px;
+   padding-bottom: 50px;
+}
+
+.acol {
+   flex-basis: 48%; /*because only 2 cols are required */
+   padding: 30px 2px;
+
+}
+
+.acol img {
+   width: 100%;
+
+}
+
+.acol p {
+   padding: 15px 0 25px;
+}
+
+.each-career-info {
+   border-style: groove;
+   border-radius: 5px;
+   border-width: 5px;
+   list-style: inside;
+   margin: 15px 0px;
+}
+.row3 {
+   border-style: groove;
+   border-radius: 5px;
+   border-width: 5px;
+   list-style: inside;
+   margin: 15px 0px;
+}
+.row3 h3 {
+   padding-top: 15px;
+   /* margin:auto; */
+}
+
+.row3 p {
+   padding: 0px;
+   line-height: normal;
+   /* margin:auto; */
+}
+
+
+
+
+
+
+/* search results */
+.each-result ul li {
+   width: 80%;
+   border: #0e8388;
+   border-radius: 5%;
+   border-style: groove;
+   padding: 15px 25px 15px 25px;
+   margin: 15px 100px 5px 100px;
+   list-style: none;
+
+}
+
+.each-result ul li a {
+   color: #000;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.each-result ul li a:hover {
+   color: #0e8388;
+   text-decoration: underline;
+   transition: 0s;
+}
+
+
+/* profiler.html */
+
+#profiler-1{
+   padding: 20px;
+   margin: 0;
+   width: 80%;
+   border: #0e8388;
+   border-radius: 20px;
+   border-style: groove;
+   padding: 15px 25px 15px 25px;
+   margin: 15px 100px 5px 100px;
+}
+
+#profiler-1 p{
+   margin: 20px 0 0 0;
+}
+
+#profiler-1 form{
+   display: block;
+}
+
+.submit-btn{
+   display: inline-block;
+   text-decoration: none;
+   border: 1px solid #000;
+   padding: 10px 20px;
+   font-size: 15px;
+   background: transparent;
+   position: relative;
+   cursor: pointer;
+   color: #000;
+   margin-top: 20px;
+}
+
+.submit-btn:hover{
+   border: 1px solid #0e8388;
+   background: #0e8388;
+   transition: 1s; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   color: black;
+}
+
+body{
+   background-color: #C0C0C0;
+}
+
+main{
+   max-width: 1280px;
+   width: 80%;
+   margin: auto;
+}
+
+
+header{
+   background-color: #0e8388;
+   height: 10vh;
+   display: flex;
+   align-items: center;
+   margin-bottom: 5vh;
+}
+
+header h1{
+   margin-left: 2rem;
+}
+
+.question{
+   padding: 16px;
+   border: 1px solid #8596A0;
+   margin-bottom: 32px;
+
+}
+
+.question-title{
+   margin-left: 4px;
+   font-weight: 400;
+   font-size: 1.5rem;
+   
+}
+
+.question-form{
+   border: 1px solid #8596A0;
+   padding: 16px;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.question-form h1{
+   text-align: center;
+   margin: 2rem 0;
+}
+
+.question-option{
+   display: flex;
+   align-items: center;
+}
+
+.question-option label{
+   display: flex;
+   margin-left: 1rem;
+}
+
+.submit-button{
+   margin: 48px 0px;
+   width: 250px;
+   height: 50px;
+   background-color: #0e8388;
+   color: black;
+}
+
+
+.result{
+   margin-bottom: 2rem;
+   font-size: 4rem;
+}
+
+.answer {
+   display: flex;
+   margin-bottom: .5rem;
+}
+
+.answers {
+   display: flex;
+}
+
+.green {
+   color: aquamarine;
+   margin-left: 20px;
+}
+
+.red {
+   color: crimson;
+   margin-left: 20px;
+}
+
+.play-link{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   width: 15rem;
+   height: 3rem;
+
+   margin-top: 2rem;
+   color: black;
+   border: 1px solid black;
+   background-color: rgb(169, 254, 225);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <!-- #navvlinks {
+    margin: 0 3vw 0 0;
+  }
+  
+  .gradient-custom-3 { */
+  /* fallback for old browsers */
+  /* background: #84fab0; */
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5)); */
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+  } */
+  /* .gradient-custom-4 {*/
+  /* fallback for old browsers */
+  /* background: #84fab0; */ 
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1)); */
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+  }
+  
+  .form-outline mb-4{
+    padding: 0 0 15 0;
+  } */

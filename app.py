@@ -74,6 +74,7 @@ def careers_in_industry(code):
 
 @app.route('/profiler/<question>/<start>', methods=["GET", "POST"])
 def profiler(question,start):
+  
   if request.method == "POST" :
     user_answer = request.form.to_dict()
     for i,j in user_answer.items():

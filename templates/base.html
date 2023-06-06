@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>careers</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="static\images\cwlogo(541).png" type="image/x-icon">
@@ -15,7 +15,7 @@
 <body>
     <section class="sub-header">
         <nav>
-            <a href="{{url_for('index')}}"><img src="../static/images/cwlogo(541).png"></a>
+            <a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='images/cwlogo(541).png') }}"></a>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
 

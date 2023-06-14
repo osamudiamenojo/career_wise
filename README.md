@@ -8,7 +8,7 @@ Future plans include updates on online workshops and career fairs, allowing pare
 
 ## Set Up
 
-To run this application locally, you need make use of the onet api. Read the docs [here](https://services.onetcenter.org/reference/). You will need a username and password to run locally.  Clone the project on your preferred IDE and add your username and password to your .env file as **API_USERNAME** and **PASSWORD**
+To run this application locally, you need make use of the onet api. Read the docs [here](https://services.onetcenter.org/reference/). You will need a username and password to run locally.  Clone the project on your preferred IDE and add your username and password to your .env file as **API_USERNAME** and **PASSWORD** 
 make sure you are in the project folder on your terminal then create a virtual environment using
 ```dotnetcli
 python3 -m venv env 
@@ -32,7 +32,7 @@ Your app should be running on port 5000
 
 
 ## Credits
-- This projects makes use of two API's from onet and ...
+- This projects makes use of two API's from onet and unsplash
 
 ## Hosting 
 This app is hosted on render and can be accessed from this link [here](https://careerwise.onrender.com/careers)

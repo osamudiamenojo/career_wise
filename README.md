@@ -2,13 +2,12 @@
 Team Software Project For Kibo Developers
 Careerwise is a web application that helps secondary school students discover and learn about potential career paths. 
 This version will also enable users to view different career options and get a recommendation on best career choice after taking a career test 
-The third version would let users  join the Careerwise community. 
-Future plans include updates on online workshops and career fairs, allowing parent users and personalizing the user experience.
 
 
 ## Set Up
 
-To run this application locally, you need make use of the onet api. Read the docs [here](https://services.onetcenter.org/reference/). You will need a username and password to run locally.  Clone the project on your preferred IDE and add your username and password to your .env file as **API_USERNAME** and **PASSWORD** 
+To run this application locally, you need make use of the onet api. Read the docs [here](https://services.onetcenter.org/reference/). You will need a username and password to run locally.  Clone the project on your preferred IDE and add your username and password to your .env file as **API_USERNAME** and **PASSWORD** . Also you'll need the unsplash API for images. Read the docs [here](https://unsplash.com/documentation) Add your key to the .env file as **ACCESS_KEY**. 
+
 make sure you are in the project folder on your terminal then create a virtual environment using
 ```dotnetcli
 python3 -m venv env 
